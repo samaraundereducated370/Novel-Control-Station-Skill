@@ -1,25 +1,47 @@
-# Changelog
+# 变更日志
 
-All notable changes to `novel-control-station` will be documented in this file.
+`novel-control-station` 的重要变更都会记录在这个文件中。
+
+## 0.2.0 - 2026-03-21
+
+### 新增
+
+- 项目级章节标题控制，包括命名体系锁定、章节控制卡中的标题候选，以及成稿后的题章贴合度复核。
+- marathon 启动交接流程，包括 `assets/codex-continue-novel.ps1` 模板和项目根目录 runner 生成。
+- 章节标题、质量/回写复核、读者留存失败模式、marathon 启动交接等补充控制参考文档。
+- 扩展后的内部风格模块参考集，覆盖幽默、悬念、推理、爱情、恐怖、奇幻和文学风格。
+
+### 变更
+
+- `README.md` 现已记录章节标题流程、内部风格模块调度，以及 marathon runner 启动说明。
+- `SKILL.md` 现已将章节标题、章节回写和 marathon handoff 纳入一等工作流阶段。
+- `references/document-templates.md` 现已记录章节标题设置，以及激活主风格的兑现预期。
+- 内部风格模块已从简短路由说明改写为可操作的创作参考文档，补齐了子类型覆盖、修订检查和更柔性的自适应约束。
+
+### 移除
+
+- 发布树中的 `tests/` 目录及其测试脚本。
+- 发布树中的 `evals/` 评测目录及场景文件。
+- 本次开发阶段生成的 `docs/plans/` 实施计划草稿。
 
 ## 0.1.0 - 2026-03-19
 
-Initial public release.
+首次公开发布。
 
-### Added
+### 新增
 
-- Single-entry control workflow for Chinese long-form fiction planning, drafting, repair, and continuation.
-- Document-driven novel architecture with standard project files, dynamic state updates, and audit logging.
-- Full-outline-first workflow with interview, alignment, cast dossier, and chapter-by-chapter progression.
-- Multi-line structure control for main plot, subplots, relationships, foreshadowing, and world-rule continuity.
-- Built-in secondary recall layer for graph-style retrieval without replacing the canonical project files.
-- Chapter control card, forgotten-element monitoring, line-heat checks, and anti-drift continuity safeguards.
-- Style-dispatch design for suspense, humor, romance, literary, historical, and other genre-specific references.
-- Authenticity and de-AI pass focused on preserving Chinese prose texture, character voice, and narrative identity.
-- Marathon drafting mode that continues chapter by chapter until the planned ending is naturally reached.
+- 面向中文长篇小说规划、创作、修补和续写的单入口控制工作流。
+- 以标准项目文件、动态状态更新和审计日志为核心的文档驱动小说架构。
+- 先完整大纲、后正文的工作流，包括访谈、对齐、人物档案和逐章推进。
+- 面向主线、支线、关系线、伏笔线和世界规则连续性的多线结构控制。
+- 内建图式召回层，用于复杂项目的图结构检索，但不替代规范项目文件。
+- 章节控制卡、遗忘元素监测、线热度检查和防漂移连续性保护。
+- 面向悬念、幽默、爱情、文学、历史等题材参考的风格调度设计。
+- 以保留中文质感、人物声音和叙事身份为目标的真实性与去 AI 修订流程。
+- 可逐章持续推进，直到按既定大纲自然收束的 marathon 创作模式。
 
-### Packaging
+### 打包
 
-- Public-facing `README.md` with product-style positioning.
-- `LICENSE` under MIT.
-- `RELEASE_NOTES.md` for release overview and usage guidance.
+- 面向公开使用者的 `README.md`，采用产品式定位说明。
+- 基于 MIT 的 `LICENSE`。
+- 用于发布概览和使用提示的 `RELEASE_NOTES.md`。

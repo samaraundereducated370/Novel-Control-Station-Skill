@@ -1,11 +1,28 @@
-# Theme Pressure
+# 主题压力
 
-Theme should not float above the scene. It should pressure the scene.
+主题不是章节的口号，而是章节里哪一种价值正在被逼着接受检验。只要还没有逼到选择和后果，主题就还停留在口头层。
 
-Useful questions:
+## 三个关键问题
 
-- what value is being tested here
-- what contradiction is being exposed
-- what choice forces the chapter's meaning into action
+- 这一章到底在测试什么价值
+- 哪个矛盾正在被暴露
+- 哪个选择把意义逼进了行动
 
-If the chapter has a stated theme but no pressured choice, the theme is probably ornamental.
+## 写作动作
+
+- 让不同人物各自代表并扭曲一部分主题，而不是让一个人负责说理
+- 把主题问题压进具体局面，例如要不要背叛、要不要沉默、要不要承担
+- 让主题落在后果上，人物做完选择后必须有代价或残留
+- 如果使用母题或意象，让它在不同章节里承担不同情绪和道德重量
+
+## 判断标准
+
+- 不提主题词，读者也能感觉到这一章在争什么
+- 主题冲突改变了人物关系或自我认知
+- 主题不是把场景解释清楚，而是让场景更有压力
+
+## 常见误区
+
+- 角色突然说出一大段正确观点
+- 主题与人物选择脱节
+- 只有立场，没有代价

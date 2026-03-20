@@ -17,6 +17,17 @@ Generate this before drafting every chapter.
 - required_plotlines:
 - required_prior_debts:
 
+## Chapter Title
+- title_mode:
+- title_system_reference:
+- primary_title_job:
+- secondary_title_job:
+- title_anchor:
+- title_candidates:
+- working_title:
+- spoiler_risk:
+- final_title_recheck:
+
 ## Recall And Return Pressure
 - retrieval_slice_targets:
 - cold_lines_due:
@@ -108,4 +119,7 @@ Minimum standard:
 - every chapter must state how benchmark expectations were met or intentionally down-weighted
 - every chapter must define dialogue, suspense, or structure tasks when those pressures are active
 - every chapter must mark authenticity focus when prose risks generic drift
+- if titled chapters are active, every control card must generate `3-5` candidates and choose one working title
+- a chapter title must signal pressure, orientation, or residue rather than summarize the whole chapter
+- a working title may change after drafting if the chapter's true center moved
 - every hook must connect to an existing line, not a random surprise

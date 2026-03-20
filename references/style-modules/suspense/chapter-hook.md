@@ -1,20 +1,35 @@
-# Chapter Hook
+# 章节钩子
 
-A good hook should:
+好的章节钩子不是“停在最吓人的地方”，而是让一个已有线索在结尾突然变得更贵、更急或更难回头。
 
-- emerge from the line already in motion
-- sharpen a question, threat, or irreversible choice
-- make the next chapter feel necessary
+## 钩子应当做到
 
-Useful hook forms:
+- 从已经在动的情节线里长出来
+- 把问题、威胁或选择再拧紧一圈
+- 让下一章有明确继续动力；若项目是 slow-burn、克制或文学向，也至少要留下低烈度余压或未完成动作
 
-- discovery with consequence
-- decision under time pressure
-- unexpected reversal of trust
-- revealed cost of an earlier action
+## 常见钩子形态
 
-Avoid:
+- 发现，并且这个发现立刻带来后果
+- 时间压力下的决定
+- 信任对象突然翻面或不再可靠
+- 之前动作的真实代价此刻显形
+- 以为安全的解释被推翻
 
-- random jump scare
-- arbitrary withheld sentence
-- fake cliffhanger with no actual change
+## 写作动作
+
+- 结尾前确认局面真的发生了变化，不只是多留了一个问号
+- 优先让钩子落在行动后的余震上，而不是空白信息上
+- 如果本章是慢悬念，可以只让读者看见下一步麻烦的轮廓，或确认一股尚未解决的余压
+
+## 判断标准
+
+- 这一结尾能否一句话说出“为什么现在更糟了”
+- 如果把结尾挪到上一段，是否会损失明显力量
+- 下一章最自然的开头是否已经被迫确定
+
+## 避免
+
+- 随机跳惊
+- 故意不写完一句话
+- 没有实际变化的假 cliffhanger

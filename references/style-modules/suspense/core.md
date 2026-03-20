@@ -1,43 +1,64 @@
-# Suspense Module
+# 悬念模块
 
-Use suspense to keep forward pull clear. The reader should know what danger, question, or irreversible cost is in motion even when the answer is delayed.
+悬念的核心不是“先不说”，而是让读者清楚地感到某个问题、危险或代价正在逼近，同时答案还没到手。
 
-## Use When
+## 适用时机
 
-- uncertainty must stay live across scenes
-- risk needs escalation before a reveal
-- the chapter ending needs real forward pull
+- 未知必须跨场景持续发热
+- 揭示之前，风险需要先升级
+- 章节末尾需要真实的前拉力
+- 人物知道得不够，读者又比人物多一点或少一点
 
-## Core Effects
+## 覆盖子型
 
-- active unanswered question
-- time pressure
-- information imbalance
-- danger escalation
-- delayed revelation
-- hook-driven endings
+- 惊悚式高压悬念
+- 心理悬念
+- 慢烧悬念
+- 生存与逃亡型悬念
+- 阴谋、调查、家庭或关系悬念
 
-## Chapter Use
+不管子型如何变化，悬念的通用骨架都不变：有活问题，有拖延代价，有不断增多的麻烦。
 
-- define the chapter's main uncertainty
-- decide what cannot be revealed yet and why
-- increase risk, cost, or exposure before the end
-- make the hook emerge from an existing line
+## 核心原则
 
-## Read Next
+- 多数章节优先有一个主悬而未决问题，其余问题为它服务；多线或慢烧章节也可以保留多个低频问题，但最好让一条牵引最清楚
+- 延迟揭示必须有理由，例如时机未到、视角受限、代价更大、判断可能出错
+- 悬念靠“问题越来越贵”成立，不靠“信息越来越少”成立
+- 场景本身必须清楚，不能用读者看不懂来伪装悬念
+- 每个场景最好让旧问题更尖，或新增一个有分量的新问题
+- 对手、环境和偶发干扰通常应持续加码；在 slow-burn 或克制模式里，也可以只做低烈度推进，不必每场都猛拧
+- 如果 `09-style-guide.md` 已下调 hook density 或 cliff severity，章节牵引可以写成余压、未完成动作或不安确认，而不必强做 cliffhanger
+
+## 章节级操作
+
+1. 明确本章最重要的未知是什么。
+2. 写清如果角色现在弄错或来不及，会失去什么。
+3. 决定读者、角色、对手三方的信息差如何排列。
+4. 多数情况下在章节后半段让选择更窄、代价更清或局面更急，不要让角色长期原地猜。
+5. 章节结尾用现有情节线自然长出钩子，而不是外插惊吓。
+
+## 与其他风格混用
+
+- 和 `mystery` 混用时，悬念负责“现在怎么办”，推理负责“真相到底是什么”
+- 和 `horror` 混用时，悬念更偏逼近感，恐怖更偏失真感和余波
+- 和 `romance` 混用时，可把关系暴露、错失时机或情感代价变成悬念来源
+
+## 继续阅读
 
 - `suspense-core.md`
 - `chapter-hook.md`
 
-## Revision Checks
+## 修订检查
 
-- is the main uncertainty clear
-- does pressure rise rather than stall
-- is delayed information justified by story logic
-- does the hook create necessity, not noise
+- 主未知是否一句话就能说清
+- 风险是否持续上升，而不是原地踏步
+- 延迟信息是否有故事逻辑，而不是作者强压
+- 每一场戏结束时，问题是否更尖或成本是否更高
+- 结尾钩子是否让下一章变得必要
 
-## Common Failures
+## 常见失误
 
-- vagueness mistaken for suspense
-- hiding basic scene clarity
-- repeating the same danger level
+- 把含糊当成悬念
+- 为了隐瞒而隐瞒，连基础动作都写不清
+- 连续重复同一级别的危险
+- 章节结尾只留一句没说完的话，没有真实变化

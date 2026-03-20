@@ -18,6 +18,9 @@ If graph-style control is needed, derive it from these files instead of creating
 - target length
 - user approval state
 - target mode: heat, reputation, dual-high balance
+- chapter title mode: numbered, titled, hybrid
+- chapter title system
+- chapter title primary purpose
 - core promise
 - primary hooks
 - historical or social pressure
@@ -117,6 +120,10 @@ For each item:
 For each planned chapter:
 
 - chapter number or slot
+- working title
+- locked title
+- title primary job
+- title system slot
 - stage target
 - main objective
 - main-line push
@@ -138,6 +145,7 @@ Use the dedicated template in [dynamic-state-template.md](dynamic-state-template
 - selected primary styles
 - support style
 - forbidden styles
+- chapter title register
 - Chinese register mode
 - prose density
 - dialogue ratio
@@ -145,6 +153,7 @@ Use the dedicated template in [dynamic-state-template.md](dynamic-state-template
 - pacing preference
 - benchmark group
 - dynamic down-weighted checks
+- payoff expectations for active primary styles
 - forbidden trope or market habits
 - image system
 - language taboos

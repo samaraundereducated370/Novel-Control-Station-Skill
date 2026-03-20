@@ -1,6 +1,6 @@
 ---
 name: novel-control-station
-description: Use when writing, planning, continuing, repairing, or revising Chinese long-form fiction with recurring characters, multiple plotlines, persistent world rules, chapter-by-chapter continuity needs, or style-specific constraints.
+description: Use when writing, planning, continuing, repairing, revising, or running marathon/"疯狂写作"/auto continuation mode for Chinese long-form fiction with recurring characters, multiple plotlines, persistent world rules, chapter-by-chapter continuity needs, or style-specific constraints.
 ---
 
 # Novel Control Station
@@ -36,6 +36,8 @@ Do not use this skill for one-off poems, short jokes, or isolated scenes that do
 - Do not satisfy forgotten-element checks with token cameos, cosmetic mentions, or checklist references. Re-entry must change pressure, debt, or expectation.
 - Do not run de-AI cleanup as blind flattening. Preserve genre register, era texture, narrator stance, and character voice.
 - Do not force scene ladders into rigid formula when the chapter needs looser movement. Use scene control to preserve pressure, not to fake architecture.
+- Do not use chapter titles as spoiler summaries, empty riddles, or decorative labels detached from chapter pressure.
+- If the project uses chapter titles, lock a naming system at project level and keep title voice consistent unless the book is intentionally entering a new phase.
 - If information is missing or contradictory, explain the risk and let the user choose whether to refine details or draft directly.
 - If drafting proceeds with assumptions, record them in the dynamic state file.
 - After every chapter, update dynamic state before moving on.
@@ -58,6 +60,28 @@ Maintain these files for every novel project:
 - `logs/writing-log.md`
 
 Read [document-templates.md](references/document-templates.md) when creating or restoring these files.
+
+## Startup Project Bootstrap
+
+When starting a new novel project, treat the project root as an operational control surface, not just a folder that stores markdown files.
+
+After creating the standard files, also create:
+
+- `codex-continue-novel.ps1` in the project root
+
+This script is the looping continuation entry point for marathon mode. It should be ready before the project leaves startup.
+Use the exact template in [assets/codex-continue-novel.ps1](assets/codex-continue-novel.ps1) and replace only the project root placeholder before writing the file into the project root.
+Read [bootstrap-and-marathon-handoff.md](references/bootstrap-and-marathon-handoff.md) when starting a project or handing off into marathon mode.
+
+Bootstrap rules:
+
+- create `codex-continue-novel.ps1` in the project root whenever a new project is initialized
+- build the file from `assets/codex-continue-novel.ps1`
+- replace only the project root placeholder with the actual project root
+- repair stale scripts by rebuilding from the template instead of creating a second variant
+- verify the root script exists and the placeholder is gone before marathon handoff
+- if automatic file creation is blocked, tell the user that startup could not finish automatically and instruct them to create or copy the script manually before marathon handoff
+- do not assume the user will remember the launch command later; record the exact command during handoff
 
 ## Secondary Control View
 
@@ -85,6 +109,7 @@ At project launch, major revision, and high-level review, read:
 - [foundational-literary-principles.md](references/foundational-literary-principles.md)
 - [critical-evaluation-standards.md](references/critical-evaluation-standards.md)
 - [epoch-and-people-resonance.md](references/epoch-and-people-resonance.md)
+- [reader-retention-and-ai-failure-modes.md](references/reader-retention-and-ai-failure-modes.md)
 
 Use them to convert abstract craft into project truth inside:
 
@@ -132,6 +157,7 @@ Load these references only when their stage is active:
 - [dialogue-writing-rules.md](references/dialogue-writing-rules.md)
 - [suspense-and-reveal-design.md](references/suspense-and-reveal-design.md)
 - [chapter-architecture-rules.md](references/chapter-architecture-rules.md)
+- [chapter-title-method.md](references/chapter-title-method.md)
 - [scene-execution-patterns.md](references/scene-execution-patterns.md)
 - [forgotten-elements-and-line-heat.md](references/forgotten-elements-and-line-heat.md)
 - [authenticity-and-de-ai-pass.md](references/authenticity-and-de-ai-pass.md)
@@ -147,10 +173,12 @@ Stage routing:
 - outline and roadmap design:
   - `graph-and-recall-control.md`
   - `chapter-architecture-rules.md`
+  - `chapter-title-method.md`
   - `character-construction-methods.md`
   - `scene-execution-patterns.md`
 - chapter drafting and revision:
   - always load `chapter-architecture-rules.md`
+  - load `chapter-title-method.md` when the project uses titled chapters or title finalization is active
   - load `graph-and-recall-control.md` when recurrence density, cast rotation, or interference pressure is high
   - load `dialogue-writing-rules.md` when dialogue is carrying pressure
   - load `suspense-and-reveal-design.md` when concealment or reveal fairness is active
@@ -176,7 +204,7 @@ Core questions first:
 4. Ending Direction
    - emotional destination, cost, likely shape of the ending
 5. Style And Market Mode
-   - primary style, support style, target mode, tolerance for slow-burn, forbidden habits
+   - primary style, support style, target mode, tolerance for slow-burn, chapter title mode, forbidden habits
 
 Language default:
 
@@ -276,6 +304,19 @@ If the user chooses `draft directly`:
 - flag it as temporary
 - record it in `08-dynamic-state.md` under pending confirmation
 
+## Chapter Title Control
+
+Read [chapter-title-method.md](references/chapter-title-method.md) when the project uses chapter titles, when the user asks for named chapters, or when a numbered-only chapter system may need to change.
+
+Rules:
+
+- chapter titles are optional; plain numbering is valid when speed, invisibility, or relentless forward pull serves the book better
+- if the project uses chapter titles, lock one naming system in `00-project-overview.md`, `07-chapter-roadmap.md`, and `09-style-guide.md`
+- each title should carry one primary job and at most one secondary job: hook, focus, orientation, motif return, or voice signal
+- generate `3-5` candidate titles from the chapter control card, then choose a working title before drafting
+- do not use chapter titles as blunt summaries, spoiler labels, fake-poetic fog, or generic serial filler
+- after the chapter passes structure and authenticity checks, run a final title-fit recheck and replace the working title if the chapter's true center moved
+
 ## Chapter Workflow
 
 For every chapter, use this order:
@@ -298,6 +339,7 @@ For every chapter, use this order:
    - drill into deeper style documents only if the chapter needs them
 5. Read only the execution-method references needed for this chapter.
    - always read `chapter-architecture-rules.md`
+   - read `chapter-title-method.md` if the project uses chapter titles or if title finalization is active
    - read `graph-and-recall-control.md` if a retrieval slice was needed
    - read `dialogue-writing-rules.md` if dialogue pressure is central
    - read `suspense-and-reveal-design.md` if suspense or reveal work is active
@@ -319,45 +361,32 @@ For every chapter, use this order:
    - trope convenience overriding human truth
    - lost social or era pressure
 7. Generate a chapter control card using [chapter-control-card.md](references/chapter-control-card.md).
-8. If the risk scan is serious, use the missing information branch.
-9. Draft the chapter from the control card.
+8. If the project uses chapter titles, generate `3-5` candidate titles using [chapter-title-method.md](references/chapter-title-method.md).
+   - choose a working title that matches the project's naming system
+   - record the working title in the chapter control card and `07-chapter-roadmap.md`
+9. If the risk scan is serious, use the missing information branch.
+10. Draft the chapter from the control card.
    - when the chapter needs tighter control, write scene by scene or pressure unit by pressure unit using [scene-execution-patterns.md](references/scene-execution-patterns.md)
-10. Run the chapter benchmark check.
-11. If the benchmark check fails, apply rewrite escalation before accepting the chapter.
-12. Run the authenticity pass using [authenticity-and-de-ai-pass.md](references/authenticity-and-de-ai-pass.md).
-13. Run a post-authenticity mini recheck.
+11. Run the chapter benchmark check.
+12. If the benchmark check fails, apply rewrite escalation before accepting the chapter.
+13. Run the authenticity pass using [authenticity-and-de-ai-pass.md](references/authenticity-and-de-ai-pass.md).
+14. Run a post-authenticity mini recheck.
    - confirm continuity facts still hold
    - confirm character voice and relationship pressure did not flatten or drift
    - confirm hook, closure, and residue still function
-14. Review the chapter for continuity, style integrity, thematic pressure, critical standards, and whether return-pressure handling stayed causal rather than token.
-15. Update dynamic and structural files.
-16. Record the chapter and file updates in the writing log.
+15. If the project uses chapter titles, run the final title check.
+   - confirm the title still matches the accepted chapter's mission, turn, residue, and voice
+   - replace the working title if the chapter changed its center during drafting
+16. Review the chapter for continuity, style integrity, thematic pressure, critical standards, and whether return-pressure handling stayed causal rather than token.
+17. Update dynamic and structural files.
+18. Record the chapter and file updates in the writing log.
 
 ## Chapter Benchmark Check
-
-After every chapter draft, check at minimum:
-
-- character dimensionality increased rather than flattened
-- at least one arc moved
-- pacing contains hook, propulsion, local closure, and residue appropriate to the benchmark mode
-- the chapter closes one obligation and carries at least one debt forward
-- theme lands in action, relation, or consequence
-- the prose keeps memory points and does not collapse into flat procedural narration
-- originality remains intact and the chapter is not benchmark cosplay
-- recurring elements either advance, echo, or are intentionally deferred with justified pressure
-- scene progression contains at least one changed pressure state through a turn, aftershock, or new obligation
-
-For slow-burn, restrained, anti-formula, or experimental requests:
-
-- keep character, logic, theme, and originality as hard gates
-- dynamically down-weight hook density, twist frequency, stimulation intensity, and cliff severity
-
-Also check:
-
-- protagonist core personality appears in action or dialogue
-- dialogue carries pressure rather than only explanation
-- suspense or reveal tasks are handled fairly where active
-- chapter architecture includes a turn, local closure, and carryover debt
+Read [quality-and-writeback-checks.md](references/quality-and-writeback-checks.md) and [reader-retention-and-ai-failure-modes.md](references/reader-retention-and-ai-failure-modes.md) before accepting a chapter.
+Hard gates:
+- character, logic, theme, and originality stay hard gates even in slow-burn or restrained modes
+- reject flat procedural prose, benchmark cosplay, unsupported payoffs, and dialogue without pressure
+- keep protagonist voice, local closure, and carryover debt legible in the accepted chapter
 
 ## Forgotten Element Control
 
@@ -409,6 +438,21 @@ If the chapter benchmark check fails:
 
 Marathon mode begins only after the user approves the current outline and cast dossier.
 
+If the user asks for crazy writing, nonstop continuation, auto continuation, or marathon-style hands-off drafting:
+
+- load [bootstrap-and-marathon-handoff.md](references/bootstrap-and-marathon-handoff.md)
+- ensure `codex-continue-novel.ps1` exists in the project root before handoff
+- create or repair the script from `assets/codex-continue-novel.ps1` first if it is missing or stale
+- tell the user to close the current session
+- then tell the user to run this command from the project root:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\codex-continue-novel.ps1
+```
+
+- tell the user that `Ctrl+C` stops the looping runner
+- if automatic startup is blocked for any reason, explicitly present the same command as the manual fallback instead of describing the process vaguely
+
 In marathon mode:
 
 - do not ask the user again chapter by chapter
@@ -419,6 +463,7 @@ For each chapter, still do:
 - required file reads
 - retrieval slice preparation when density requires it
 - chapter control card
+- working title generation and final title recheck when titled chapters are active
 - selected style module loading
 - forgotten-element and line-heat scan
 - benchmark and continuity checks
@@ -441,40 +486,13 @@ Stop marathon mode only when the approved outline has naturally concluded:
 Do not stop because a fixed chapter count or word target was reached.
 
 ## Dynamic Update Rules
-
-After every chapter, update `08-dynamic-state.md` with:
-
-- key events
-- character state changes
-- relationship changes
-- plotline progress
-- foreshadow updates
-- world or rule changes
-- emotional debts, promises, wounds
-- retrieval and return pressure
-- line heat or cold status where relevant
-- last meaningful touch for recurring elements when that affects future recall
-- temporary assumptions pending confirmation
-- carryover into the next chapter
-
-Use [dynamic-state-template.md](references/dynamic-state-template.md) as the base format.
-
-Update these files when needed:
-
-- `03-cast-bible.md` for material character change
-- `04-relationship-map.md` for relationship phase change
-- `05-main-plotlines.md` for line progression or rerouting
-- `06-foreshadow-ledger.md` for planting, activation, or payoff
-- `07-chapter-roadmap.md` for future chapter obligations
-- `02-worldbuilding.md` for new or corrected world rules
-
-If using a secondary control view:
-
-- update canonical files first
-- then sync any optional recall or scratch control notes
-- never leave the graph view more current than the project files
-
-Apply the writing log rules in [logging-rules.md](references/logging-rules.md).
+Read [quality-and-writeback-checks.md](references/quality-and-writeback-checks.md) for the full writeback checklist.
+After every accepted chapter:
+- update `08-dynamic-state.md` using [dynamic-state-template.md](references/dynamic-state-template.md)
+- update changed canonical files in `03/04/05/06/07/02` as needed
+- if chapter titles are active, make sure the locked chapter title in `07-chapter-roadmap.md` still matches the accepted chapter
+- sync optional secondary control notes only after canonical files are current
+- apply the logging rules in [logging-rules.md](references/logging-rules.md)
 
 ## Style Module Loading
 
@@ -503,72 +521,6 @@ Available internal modules:
 - fantasy
 - literary
 
-## Adaptive Weighting
+## Review And Writeback Detail
 
-Benchmark standards must adapt to user intent without abandoning quality.
-
-If the user explicitly asks for:
-
-- slow-burn
-- anti-formula
-- restrained intensity
-- literary or experimental movement
-
-Then:
-
-- keep hard gates on character dimensionality, logical coherence, theme landing, and originality
-- down-weight but do not erase hook density, twist frequency, stimulation intensity, and cliff severity
-- record the down-weighted checks in `09-style-guide.md`
-
-## Originality And Compliance
-
-Benchmark logic is a pressure system, not a copying license.
-
-Never:
-
-- transplant a sample work's core trick
-- imitate a sample work's signature cast shell
-- preserve a sample work's reveal order with cosmetic changes
-- use benchmark labels as an excuse for collage writing
-
-Always:
-
-- extract the principle
-- restate it as a project-specific action
-- test it against the user's actual aims
-- prefer fresh combinations of pressure, scene logic, and language
-
-## Quality Gates
-
-Apply [critical-evaluation-standards.md](references/critical-evaluation-standards.md) to chapter review and [epoch-and-people-resonance.md](references/epoch-and-people-resonance.md) to project-scale resonance checks.
-Apply the benchmark layer when the work aims at mainstream readability, market force, or dual-high balance.
-
-Reject or revise a chapter when any of these are true:
-
-- a character acts only to push plot or satisfy trope expectation
-- a relationship changes without an emotional bridge
-- a payoff appears without prior load-bearing setup
-- a setting rule changes without document repair
-- point of view slips without purpose
-- structure is complex on the surface but thin underneath
-- an image or motif appears as decoration rather than pressure
-- the chapter drops the story's social, institutional, or era force
-- benchmark mode requires a hook, closure, or carryover debt and the chapter leaves none
-- a benchmark rule group is loaded but not visible in scene logic
-- the chapter imitates a sample's recognizable move instead of applying its principle
-- prose sounds inflated, fake-deep, dead, or slogan-like
-- a nonlinear shift reveals nothing about character truth or theme
-- style modules are mixed without purpose
-
-## Common Mistakes
-
-- Treating project files as optional
-- Building only one visible line and calling it a long-form structure
-- Writing a chapter before deciding what it must advance
-- Forgetting to update dynamic state after drafting
-- Recording key truths in the log instead of the real project files
-- Treating foundational literary principles as inspiration instead of constraints
-- Loading every style module instead of only the selected internal modules
-- Treating a scratch graph or recall map as if it were the canon
-- Bringing back cold elements with empty cameos instead of causal pressure
-- Flattening prose while trying to remove AI patterns
+Read [quality-and-writeback-checks.md](references/quality-and-writeback-checks.md) when applying adaptive weighting, originality discipline, chapter quality gates, final writeback, or common-failure review.

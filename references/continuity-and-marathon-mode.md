@@ -95,15 +95,17 @@ Loop:
 2. prepare retrieval slice if density requires it
 3. run forgotten-element and line-heat scan
 4. generate chapter control card
-5. load active style modules
-6. draft chapter
-7. run benchmark and continuity checks
-8. rewrite if needed
-9. run authenticity pass
-10. run a post-authenticity mini recheck
-11. update dynamic and structural files
-12. log the chapter
-13. continue to the next chapter
+5. generate a working title if titled chapters are active
+6. load active style modules
+7. draft chapter
+8. run benchmark and continuity checks
+9. rewrite if needed
+10. run authenticity pass
+11. run a post-authenticity mini recheck
+12. run the final title recheck if titled chapters are active
+13. update dynamic and structural files
+14. log the chapter
+15. continue to the next chapter
 
 ## 7. Rewrite Escalation Still Applies
 
@@ -145,3 +147,4 @@ When the novel approaches conclusion, ask:
 - optional secondary control notes left newer than the canonical files
 - authenticity cleanup flattening character or genre voice
 - authenticity cleanup changing facts or hook pressure without a final recheck
+- titled chapters generated on autopilot with no fit check against the accepted chapter

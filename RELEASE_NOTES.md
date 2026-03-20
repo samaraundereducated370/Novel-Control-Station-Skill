@@ -1,61 +1,100 @@
-# Release Notes
+# 发布说明
 
-## Novel Control Station 0.1.0
+## Novel Control Station 0.2.0 版本
 
-`novel-control-station` is now packaged as a public open-source skill for Chinese long-form fiction work.
+`0.2.0` 是在 `0.1.0` 基础上的一次功能型升级发布。它把此前已经接入源码树、但还未正式打包说明的能力，整理成了清晰可用的正式版本。
 
-This first release positions the skill as a novel control system rather than a one-shot writing prompt. Its goal is to help users align a book before drafting, keep structure and character logic stable during drafting, and sustain long-form output until the story reaches its planned ending.
+### 本版本新增并正式发布的内容
 
-## Why this release matters
+- 章节标题工作流：支持项目级命名体系、逐章候选标题生成、工作标题选择以及成稿后的题章贴合度复核。
+- 基于 `assets/codex-continue-novel.ps1` 生成项目根目录 runner 的 marathon 启动交接流程。
+- 位于 `references/style-modules/` 下的内部风格模块系统，覆盖幽默、悬念、推理、爱情、恐怖、奇幻和文学风格。
+- 已整合的章节验收与回写参考，包括自适应降权、原创性约束和读者留存失败模式。
 
-Most AI novel workflows can produce scenes, but they struggle to run a full-length Chinese novel without drift. The breakdown usually appears in the middle and late stages: settings blur, relationships flatten, foreshadowing disappears, and chapter rhythm starts serving output volume instead of story pressure.
+### 为什么这次升级重要
 
-This release is built to address that exact failure pattern with:
+这些升级进一步把技能从“只会靠提示词写正文”推进到“能管理小说项目”的状态：
 
-- interview-first alignment
-- full-outline-first design
-- document-driven project truth
-- chapter control before drafting
-- dynamic state updates after each chapter
-- continuity and recall safeguards for long projects
+- 章节标题不再是装饰性标签，而是受控的叙事信号
+- 风格指导不再全量混读，而是按章节选择性加载
+- marathon 续写不再依赖用户记住恢复命令，而是有显式 handoff 机制
+- 章节验收与回写规则对自适应降权和失败检测都写得更明确
 
-## Who this is for
+### 发布树整理
 
-- Users writing Chinese web novels or serialized fiction
-- Users building multi-plot, cast-dense, foreshadow-heavy long-form fiction
-- Users who need AI to keep writing beyond the first few strong chapters
-- Users who want stronger project control, not just prettier sample paragraphs
+- 已移除 `tests/` 目录及测试脚本
+- 已移除 `evals/` 评测目录与场景文件
+- 已移除本次开发阶段产生的 `docs/plans/` 实施草稿
 
-## Standout capabilities
+这样当前发布树会更聚焦于技能本体、参考文档和运行资源，不再混入测试/计划产物。
 
-- Run a novel like a managed project, not a temporary chat thread.
-- Keep characters, relationships, plotlines, promises, and emotional debt in active circulation.
-- Switch from planning to marathon drafting without dropping internal control.
-- Use style references on demand instead of flattening every genre into one generic tone.
-- Apply de-AI cleanup without erasing voice, rhythm, or Chinese prose texture.
-- Support repair work when a novel has already started drifting or losing pressure.
+### 本版本应重点阅读的文档
 
-## Included in this release
+使用 `0.2.0` 时，建议优先阅读：
 
-- Core skill entry in `SKILL.md`
-- Public project overview in `README.md`
-- Reference documents under `references/`
-- Evaluation scaffolding under `evals/`
-- MIT license and release metadata
+- `README.md`：产品级定位与工作流概览
+- `SKILL.md`：当前生效的总控流程
+- `references/document-templates.md`：项目真值文件结构
+- `references/style-modules/`：选择性风格加载
+- `references/bootstrap-and-marathon-handoff.md`：自动续写启动交接
+- `references/quality-and-writeback-checks.md`：章节验收与回写细则
 
-## Known limits
+## Novel Control Station 0.1.0 版本
 
-- This skill is optimized for Chinese fiction workflows, not general-purpose creative writing.
-- It is intentionally heavier than lightweight prompt-based story generation.
-- Final quality still depends on the user's premise, revision standards, and willingness to align the outline before drafting.
+`novel-control-station` 已作为一个面向中文长篇小说工作的公开开源技能完成打包发布。
 
-## Recommended usage
+首个版本将这个技能定位为“小说控制系统”，而不是“一次性写作提示词”。它的目标是在正式写正文之前先帮助用户把书的方向对齐，在创作过程中维持结构和人物逻辑稳定，并持续推动长篇项目直到抵达计划中的结尾。
 
-1. Start with the novel's genre, audience, protagonist, core personality, intended length, and ending direction.
-2. Let the skill ask follow-up questions until the plot direction is aligned.
-3. Review the complete outline and cast dossier before authorizing drafting.
-4. Use continuous drafting only after the control documents are stable.
+## 为什么这个版本重要
 
-## License
+多数 AI 小说工作流都能写出局部场景，但很难在一部长篇中文小说里长期维持不漂移。问题通常出现在中后段：设定开始模糊，关系开始变平，伏笔开始失踪，章节节奏也开始为“产字数”服务，而不是为故事压力服务。
 
-Released under the MIT License.
+这个版本正是围绕这些失控模式来设计的，核心手段包括：
+
+- 先访谈、后对齐
+- 先完整大纲、后正文
+- 文档驱动的项目真值层
+- 动笔前先做章节控制
+- 每章之后立即更新动态状态
+- 面向长篇项目的连续性与召回防护
+
+## 适合谁用
+
+- 写中文网文或连载小说的用户
+- 正在构建多主线、人物密集、伏笔密集的长篇项目的用户
+- 希望 AI 不只会写前几章，而能持续往后推进的用户
+- 想要更强项目控制，而不只是更漂亮样章的用户
+
+## 突出能力
+
+- 把小说当成可管理项目来运行，而不是临时会话线程。
+- 让人物、关系、情节线、承诺和情感债持续处于激活状态。
+- 从规划阶段切换到 marathon 创作时，不丢失内部控制。
+- 按需调用风格参考，而不是把所有类型压扁成同一种通用语气。
+- 做去 AI 修订时不抹掉人物声音、句法节奏和中文质感。
+- 当小说已经开始跑偏或失压时，支持中途修补。
+
+## 0.1.0 首发内容
+
+- 位于 `SKILL.md` 的核心技能入口
+- 位于 `README.md` 的公开项目说明
+- `references/` 下的参考文档
+- 首发阶段附带的 `evals/` 评测脚手架（已在 `0.2.0` 发布树中移除）
+- MIT 许可证和发布元数据
+
+## 已知限制
+
+- 这个技能针对的是中文小说工作流，不是通用创意写作。
+- 它刻意比轻量提示词式故事生成更重。
+- 最终质量仍然取决于用户的题材设定、修订标准，以及是否愿意先把大纲对齐。
+
+## 推荐使用方式
+
+1. 先给出小说题材、受众、主角、核心性格、目标篇幅和结局方向。
+2. 让技能继续追问，直到整体走向对齐。
+3. 在授权正文创作前，先审核完整大纲和人物档案。
+4. 只有在控制文档稳定后，再进入连续创作。
+
+## 许可证
+
+基于 MIT 许可证发布。

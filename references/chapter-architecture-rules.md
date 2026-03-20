@@ -78,13 +78,22 @@ Not every chapter should use the same structure. Rotate among:
 
 Variation helps long fiction stay alive.
 
-## 7. Structure Must Match Mode
+## 7. Chapter Title Must Match The Chapter Itself
+
+When the project uses chapter titles:
+
+- the title should reinforce mission, turn, residue, orientation, or motif
+- the title should not summarize the chapter's full event chain
+- the title should create pull without stealing the chapter's discovery
+- the title may be revised after drafting if the chapter's real center changed
+
+## 8. Structure Must Match Mode
 
 - heat-forward mode may push sharper hooks and tighter chapter-end pull
 - reputation-forward mode may lean harder on residue and thematic pressure
 - dual-high balance needs both readability and aftereffect
 
-## 8. Chapter Revision Questions
+## 9. Chapter Revision Questions
 
 - where does this chapter truly begin
 - what is the pivot
@@ -93,7 +102,7 @@ Variation helps long fiction stay alive.
 - what line went cold and needs attention
 - what human pressure became clearer here
 
-## 9. Failure Signals
+## 10. Failure Signals
 
 - chapter exists only to move people into place
 - start is too early

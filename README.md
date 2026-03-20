@@ -3,10 +3,10 @@
 <div align="center">
   <p><strong>把中文长篇小说创作，从一次性生成，升级成可控、可追踪、可持续推进的创作系统。</strong></p>
   <p>
-    <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-111111">
-    <img alt="Chinese Long-form Fiction" src="https://img.shields.io/badge/focus-Chinese%20Long--Form%20Fiction-0f766e">
-    <img alt="Doc-Driven" src="https://img.shields.io/badge/architecture-Doc--Driven-1d4ed8">
-    <img alt="Continuity Control" src="https://img.shields.io/badge/control-Continuity%20Engine-7c3aed">
+    <img alt="许可证: MIT" src="https://img.shields.io/badge/license-MIT-111111">
+    <img alt="聚焦: 中文长篇小说" src="https://img.shields.io/badge/focus-Chinese%20Long--Form%20Fiction-0f766e">
+    <img alt="架构: 文档驱动" src="https://img.shields.io/badge/architecture-Doc--Driven-1d4ed8">
+    <img alt="控制: 连续性引擎" src="https://img.shields.io/badge/control-Continuity%20Engine-7c3aed">
   </p>
 </div>
 
@@ -14,15 +14,21 @@
 
 它会先对齐题材、受众、主角、规模与结局方向，再生成完整大纲和人物档案；进入正文阶段后，又会按章节读取项目文档、控制结构推进、回写动态状态、修正连续性风险，并在需要时调用内置风格与技法文档，持续压制设定漂移、人物失真、关系断档、伏笔遗忘和文风塌陷。
 
+当前正式版本 `0.2.0` 进一步补强了三个升级面：
+
+- 章节标题控制已经并入章节流程，可在项目级锁定命名体系、在单章生成候选标题并在成稿后复核题章贴合度
+- 内置风格模块已经整理为选择性加载的内部文档系统，覆盖幽默、悬念、推理、爱情、恐怖、奇幻、文学等风格
+- 连续创作模式新增项目根目录启动脚本模板，可为 marathon / 疯狂创作交接准备 `codex-continue-novel.ps1`
+
 如果你想要的是一个能从开书、控盘、扩写、修补一路推进到自然完结的中文小说生产中枢，这个技能就是为这个目标设计的。
 
-## Star History
+## Star 历史
 
 <a href="https://www.star-history.com/?repos=jingtai123%2FNovel-Control-Station-Skill&type=date&legend=top-left">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=jingtai123/Novel-Control-Station-Skill&type=date&theme=dark&legend=top-left" />
    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=jingtai123/Novel-Control-Station-Skill&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=jingtai123/Novel-Control-Station-Skill&type=date&legend=top-left" />
+   <img alt="Star 历史图表" src="https://api.star-history.com/image?repos=jingtai123/Novel-Control-Station-Skill&type=date&legend=top-left" />
  </picture>
 </a>
 
@@ -109,7 +115,7 @@
 它吸收了图结构管理角色、事件、关系、伏笔、世界规则的思路，但不会制造第二套互相打架的真相源。  
 标准项目文件始终是唯一真值层，图式回忆只作为临时控制视图，用于快速提取本章必须回读和处理的内容。
 
-### 7. 章节控制与强钩子闭环
+### 7. 章节控制、章节命名与强钩子闭环
 
 每一章在动笔前，都会先明确：
 
@@ -119,19 +125,24 @@
 - 本章冲突是什么
 - 结尾留下什么余波或牵引
 
+如果项目启用了章节名，它还会把章节命名纳入控制流程，先锁定全书命名体系，再为单章生成多个候选名，最后在成稿后复核标题是否仍然贴合本章真正的重心、悬念和余波。
+
 如果一章只是把人物从 A 地送到 B 地，它会把这类章节视为结构性疲软。
 
 ### 8. 风格调度与按需引用
 
 技能已经为不同风格和题材预留了独立参考文档，不会把所有技法硬塞进同一层提示。  
-在需要时，它可以按场景调用不同的写法逻辑，例如：
+在需要时，它会通过 `references/style-modules/index.md` 选择性加载内部风格模块，先读 `core.md`，只有章节真的需要时才继续展开更深文档。当前内置模块包括：
 
-- 悬疑
 - 幽默
-- 言情
-- 历史
-- 文学化表达
-- 群像叙事
+- 悬念
+- 推理
+- 爱情
+- 恐怖
+- 奇幻
+- 文学
+
+它支持主风格与辅助风格协同，但不会把所有风格一次性压进同一章。
 
 这意味着它不是单一文风生成器，而是带有调度能力的风格中枢。
 
@@ -145,13 +156,14 @@
 
 目标不是更平，而是更像这本小说自己该有的语言。
 
-### 10. 疯狂创作模式与自然完结
+### 10. 疯狂创作模式、启动脚本与自然完结
 
 用户确认大纲和人物档案后，可以开启连续创作模式。  
 在这个模式里，技能不会在每一章后反复请求人工确认，而是持续执行：
 
 - 读取项目文档
 - 生成章节控制卡
+- 生成并复核章节标题（如果项目使用章节名）
 - 起草正文
 - 进行逻辑校验与必要重写
 - 更新动态状态
@@ -160,17 +172,24 @@
 
 直到按完整大纲自然完结为止。
 
+如果用户要开启疯狂创作 / 自动续写模式，技能还会先准备项目根目录启动脚本：
+
+- 从 `assets/codex-continue-novel.ps1` 生成项目专用 `codex-continue-novel.ps1`
+- 替换项目根目录占位符
+- 在交接时明确给出启动命令：
+  `powershell -ExecutionPolicy Bypass -File .\codex-continue-novel.ps1`
+
 ## 能力看板
 
 | 模块 | 能力表现 |
 |---|---|
 | 立项层 | 题材定位、受众识别、主角与冲突对齐、规模判断 |
 | 设计层 | 完整大纲、人物档案、世界规则、关系结构、多线编排 |
-| 创作层 | 章节控制、钩子设计、闭环推进、场景落地、节奏调度 |
+| 创作层 | 章节控制、章节命名、钩子设计、闭环推进、场景落地、节奏调度 |
 | 连续性层 | 设定防漂移、人物防失真、关系防断档、伏笔防遗失 |
-| 调度层 | 风格参考按需读取、题材规则按需触发、复杂项目回忆切片 |
+| 调度层 | 风格模块按需读取、题材规则按需触发、复杂项目回忆切片 |
 | 修订层 | 去 AI 味、真实性增强、人物声音校准、叙事力度修正 |
-| 项目层 | 动态状态管理、日志留痕、长期推进、自然完结控制 |
+| 项目层 | 动态状态管理、标题体系锁定、日志留痕、长期推进、自然完结控制 |
 
 ## 它是怎么工作的
 
@@ -187,15 +206,18 @@
 ### 第三步：按文档驱动章节创作
 
 每一章开始前，先读取项目真值文件；必要时再调用回忆切片、风格文档、控制卡文档。  
+如果项目使用章节标题，还会在章节控制卡阶段先生成候选标题并锁定工作标题。
 章节不是“随机生成”，而是“在可控上下文内推进”。
 
 ### 第四步：写完一章，项目状态立刻更新
 
-章节完成后，技能会更新动态状态与关键记录，避免前账失踪、人物弧光断裂、情绪债务蒸发、伏笔遗忘。
+章节完成后，技能会更新动态状态与关键记录，必要时回写章节标题、路线图和风格指南，避免前账失踪、人物弧光断裂、情绪债务蒸发、伏笔遗忘。
 
 ### 第五步：跑完整本，而不是只写局部精彩
 
 它的终极目标不是把单章写漂亮，而是让整部中文长篇小说从立项到完结都维持稳定质量与结构压力。
+
+如果要切入 marathon handoff，它还会先确认启动脚本已经写入项目根目录，避免“想自动继续，但下次不知道怎么恢复”。
 
 ## 为什么它和常见小说技能不一样
 
@@ -208,6 +230,11 @@
 
 风格、结构、连续性、修订、章节控制都被彻底合并为一组内置文档，由总控入口统一调度。  
 用户不需要在多个技能之间切来切去争夺上下文。
+
+### 它不是把章节标题和风格当装饰层
+
+章节标题、风格模块、章节验收、动态回写都已并入主流程。
+它不会把标题当成事后贴标签，也不会把风格当成统一撒味精。
 
 ### 它不是只会持续推进
 
@@ -251,15 +278,21 @@ novel-control-station/
 ├── LICENSE
 ├── CHANGELOG.md
 ├── RELEASE_NOTES.md
-├── evals/
+├── assets/
+│   └── codex-continue-novel.ps1
 └── references/
+    ├── bootstrap-and-marathon-handoff.md
     ├── document-templates.md
     ├── interview-and-handoff-flow.md
     ├── chapter-control-card.md
+    ├── chapter-title-method.md
     ├── continuity-and-marathon-mode.md
+    ├── quality-and-writeback-checks.md
+    ├── reader-retention-and-ai-failure-modes.md
     ├── graph-and-recall-control.md
     ├── forgotten-elements-and-line-heat.md
     ├── authenticity-and-de-ai-pass.md
+    ├── style-modules/
     ├── ...
 ```
 
@@ -269,8 +302,10 @@ novel-control-station/
   - 总控入口，定义整体流程、规则和触发机制。
 - `references/`
   - 内置文档库，按需读取，不一次性全量展开。
-- `evals/`
-  - 用于后续做技能压力测试、规则验证和行为评估。
+- `references/style-modules/`
+  - 内部风格模块索引与细分文档，按章节选择性加载。
+- `assets/`
+  - 项目启动脚本模板与其他可复用资源。
 
 ## 快速开始
 
@@ -289,21 +324,28 @@ novel-control-station/
 你先补齐必要问题，整理成标准文档，再进入连续创作模式，按完整大纲自然完结停。
 ```
 
+```text
+使用 novel-control-station。
+这本书的章节需要标题。请先帮我确定全书章节命名体系，再在每章控制卡里给出 3 到 5 个候选标题，并在正文成稿后复核定稿标题。
+```
+
 ## 推荐使用方式
 
-1. 先交代题材、受众、主角、篇幅、结局倾向。
+1. 先交代题材、受众、主角、篇幅、结局倾向，以及你是否希望章节使用标题。
 2. 先让技能生成完整大纲和人物档案。
 3. 对大纲和人物做一次集中修改。
-4. 确认后再开启连续创作模式。
+4. 如果项目使用章节标题，先锁定标题体系。
+5. 如果要进入连续创作模式，先让技能为项目生成根目录启动脚本。
+6. 确认后再开启连续创作模式。
 
 这样它的控盘能力、连续性表现和中后期稳定性会明显更强。
 
 ## 开源信息
 
-- License: MIT
-- Default output language: Chinese
-- Positioning: 面向中文长篇小说项目的控制中枢型技能
-- Release type: 首个公开发布版本
+- 许可证：MIT
+- 默认输出语言：中文
+- 定位：面向中文长篇小说项目的控制中枢型技能
+- 当前正式版本：`0.2.0`
 
 ## 一句话总结
 

@@ -31,15 +31,9 @@
 
 如果你想要的是一个能从开书、控盘、扩写、修补一路推进到自然完结的中文小说生产中枢，这个技能就是为这个目标设计的。
 
-## Star 历史
+## Star History
 
-<a href="https://www.star-history.com/?repos=jingtai123%2FNovel-Control-Station-Skill&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=jingtai123/Novel-Control-Station-Skill&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=jingtai123/Novel-Control-Station-Skill&type=date&legend=top-left" />
-   <img alt="Star 历史图表" src="https://api.star-history.com/image?repos=jingtai123/Novel-Control-Station-Skill&type=date&legend=top-left" />
- </picture>
-</a>
+[![Star History Chart](https://api.star-history.com/image?repos=jingtai123/Novel-Control-Station-Skill&type=date&legend=top-left)](https://www.star-history.com/?repos=jingtai123%2FNovel-Control-Station-Skill&type=date&legend=top-left)
 
 ## 它解决什么问题
 

